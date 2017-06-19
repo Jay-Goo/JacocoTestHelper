@@ -1,19 +1,19 @@
-#JacocoTestHelper
+# JacocoTestHelper
 
-###本工具为Jacoco手工测试代码覆盖率的辅助工具库，帮你两步轻松接入Jacoco。
+### 本工具为Jacoco手工测试代码覆盖率的辅助工具库，帮你两步轻松接入Jacoco。
 
-##使用情景
+## 使用情景
 由于现在单元测试在小公司无法推行，且为了解决新功能测试以及回归测试在手工测试的情况下，即便用例再为详尽，也会存在遗漏的用例。通过统计手工测试覆盖率的数据，可以及时的完善用例。
 Jacoco是Java Code Coverage的缩写，在统计完成Android代码覆盖率的时候使用的是Jacoco的离线插桩方式，在测试前先对文件进行插桩，在手工测试过程中会生成动态覆盖信息，最后统一对覆盖率进行处理，并生成报告。
 
+<img src="https://github.com/Jay-Goo/JacocoTestHelper/blob/master/screenshot/device-2017-06-19-114234.png" width = "480" height = "850" alt="图片名称" align=center />
 
-![Demo截图](https://github.com/Jay-Goo/JacocoTestHelper/blob/master/screenshot/device-2017-06-19-114234.png)
 ----------
 
 
-##用法:
+## 用法:
 
-###Dependencies：
+### Dependencies：
 
 ```
 #project build.gradle
@@ -31,7 +31,7 @@ allprojects {
 	}
 ```
 
-###第一步：
+### 第一步：
 将Github项目中的	[jacoco.gradle](https://github.com/Jay-Goo/JacocoTestHelper/blob/master/app/jacoco.gradle)拷贝到项目app目录下，然后配置module 下的build.gradle
 
 ```
@@ -52,7 +52,7 @@ android {
 }
 
 ```
-###第二步：
+### 第二步：
 
 ```
 //PROJECT_PATH '项目路径' + '/app/build/outputs/code-coverage/'
@@ -70,7 +70,7 @@ JacocoHelper.generateEcFile(true);
 ----------
 
 
-##详细Report生成:
+## 详细Report生成:
 通过上面的步骤，我们完成了jacoco的配置，很简单吧，下面教大家如何使用来使用它来测试我们的代码覆盖率
 
  * 1、可以直接编译运行或者安装应用
@@ -84,7 +84,7 @@ JacocoHelper.generateEcFile(true);
 
 ----------
 
-###报告分析：
+### 报告分析：
 
 ![这里写图片描述](https://github.com/Jay-Goo/JacocoTestHelper/blob/master/screenshot/WechatIMG780.jpeg)
 
@@ -100,7 +100,7 @@ JacocoHelper.generateEcFile(true);
  
  * 2、将debug模式关闭，JacocoHelper将不会再生成任何文件和日志。`JacocoHelper.init(PROJECT_PATH,false);`
 
-##感谢
+## 感谢
 
 Q博士的博文：
 http://blog.csdn.net/itfootball/article/details/45618609
