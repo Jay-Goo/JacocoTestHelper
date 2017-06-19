@@ -7,10 +7,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- * jacoco收集覆盖率统计工具
- */
 
+/**
+ * ================================================
+ * 作    者：JayGoo
+ * 版    本：
+ * 创建日期：2017/6/16
+ * 描    述: jacoco收集覆盖率统计辅助类
+ * ================================================
+ */
 public class JacocoHelper {
 
     //ec文件的路径
@@ -22,11 +27,11 @@ public class JacocoHelper {
 
     /**
      * 初始化
-     * @param projectPath  '项目路径/app/build/' + 'outputs/code-coverage/'
+     * @param projectPath  '项目路径' + '/app/build/outputs/code-coverage/'
      * @param isDebug 是否打开log
      */
     public static void init(String projectPath, boolean isDebug){
-        PROJECT_PATH = projectPath;
+        PROJECT_PATH = projectPath + "/app/build/outputs/code-coverage/";
         LogUtils.setDebug(isDebug);
     }
 
@@ -36,6 +41,7 @@ public class JacocoHelper {
      * @param isNew 是否重新创建ec文件
      */
     public static void generateEcFile(boolean isNew) {
+        if (!LogUtils.isDebug())return;
         OutputStream out = null;
         File mCoverageFilePath = new File(DEFAULT_COVERAGE_FILE_PATH);
         try {
@@ -64,6 +70,7 @@ public class JacocoHelper {
                 e.printStackTrace();
             }
         }
+        LogUtils.d(getAdbPullCmd());
     }
 
 

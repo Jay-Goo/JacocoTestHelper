@@ -1,6 +1,8 @@
 package jaygoo.jacocohelper;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * ================================================
@@ -19,9 +21,14 @@ class LogUtils {
         isDebug = debug;
     }
 
+    public static boolean isDebug(){
+        return isDebug;
+    }
+
     public static void d(String msg){
         if (isDebug){
             Log.d(TAG,msg);
         }
     }
+
 }
