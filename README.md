@@ -93,7 +93,7 @@ JacocoHelper.generateEcFile(true);
 ![这里写图片描述](https://github.com/Jay-Goo/JacocoTestHelper/blob/master/screenshot/WX20170619-114206@2x.png)
 
 
-##移除:
+## 移除:
 上线时我们肯定要移除这些代码，其实移除也仅需两步即可轻松移除：
 
  * 1、注释掉 apply from: 'jacoco.gradle'，关闭覆盖率统计开关` testCoverageEnabled = false`
